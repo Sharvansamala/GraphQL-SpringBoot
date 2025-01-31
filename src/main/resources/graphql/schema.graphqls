@@ -1,0 +1,17 @@
+type ProductDTO{
+    productId:ID,
+    productName:String,
+    category:String,
+    price:Float,
+    stock:Int
+}
+
+type Query{
+    getAllProducts:[ProductDTO]
+    getProductByCategory(category:String):[ProductDTO]
+}
+
+type Mutation{
+    updateStock(id:ID, stock:Int):ProductDTO
+    receiveNewShipment(id:ID,stock:Int):ProductDTO
+}
